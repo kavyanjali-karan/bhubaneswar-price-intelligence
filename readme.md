@@ -96,7 +96,7 @@ bhubaneswar-price-intelligence/
 ## Run Locally
 
 ```bash
-git clone https://github.com/karankavyanjali77-sys/bhubaneswar-price-intelligence
+git clone https://github.com/kavyanjali-karan/bhubaneswar-price-intelligence
 cd bhubaneswar-price-intelligence
 pip install -r requirements.txt
 streamlit run app.py
@@ -105,4 +105,4 @@ streamlit run app.py
 ---
 
 **Kavyanjali Karan** · B.Tech CSE, ITER SOA University (2027)  
-[LinkedIn](https://linkedin.com/in/kavyanjali-karan) · [GitHub](https://github.com/karankavyanjali77-sys)
+[LinkedIn](https://linkedin.com/in/kavyanjali-karan) · [GitHub](https://github.com/kavyanjali-karan)
