@@ -14,6 +14,18 @@ This project self-collected prices for 25 grocery items across all 4 sources and
 
 ---
 
+## Business Questions
+
+This analysis was designed to answer the following questions:
+
+1. Which grocery source offers the lowest overall basket cost?
+2. How much can a typical household save by optimizing purchasing decisions?
+3. Which items exhibit the greatest price volatility across sources?
+4. Which categories should consumers prioritize for comparison shopping?
+5. What purchasing strategy minimizes annual grocery expenditure while maintaining convenience?
+
+---
+
 ## Key Findings
 
 | Metric | Result |
@@ -26,6 +38,26 @@ This project self-collected prices for 25 grocery items across all 4 sources and
 | Highest price volatility | Tomato (44%) · Onion (38%) · Ginger (37%) |
 
 **Headline:** The same 18-item basket costs ₹4,771 on Swiggy Instamart and ₹3,533 on BigBasket — a ₹1,238/month gap for identical groceries.
+
+---
+
+## Dashboard Preview
+
+### Executive Summary
+
+![Executive Summary](screenshots/executive_brief.png)
+
+### Basket Cost Comparison
+
+![Basket Cost Comparison](screenshots/basket_view.png)
+
+### Category Analysis
+
+![Category Analysis](screenshots/category_view.png)
+
+### ML Clustering
+
+![ML Clustering](screenshots/clustering_view.png)
 
 ---
 
@@ -66,24 +98,106 @@ KMeans (k=3) clusters all 25 items by average price and cross-source price sprea
 Prices collected manually from Blinkit, Swiggy Instamart, and BigBasket apps (Bhubaneswar delivery zones) and local mandi observation — April 2026. All values are midpoints of observed price ranges.
 
 ---
+## Methodology
+
+1. Collected prices for 25 grocery items across:
+   - Blinkit
+   - Swiggy Instamart
+   - BigBasket
+   - Local Mandi
+
+2. Standardized units and item definitions.
+
+3. Calculated:
+   - Basket cost
+   - Source-wise price premiums
+   - Price spread
+   - Monthly and annual savings
+
+4. Applied KMeans clustering using:
+   - Average item price
+   - Cross-source price spread
+
+5. Generated executive recommendations based on savings potential.
+
+---
+
+## Key KPIs
+
+| KPI | Definition |
+|-------|------------|
+| Monthly Saving Opportunity | Difference between highest-cost and optimized basket |
+| Annual Saving Opportunity | Monthly saving × 12 |
+| Price Premium | Additional cost paid compared to cheapest source |
+| Basket Cost | Total spend for the defined household basket |
+| Price Spread | Max Price − Min Price across sources |
+| Volatility % | Price Spread / Average Price |
+
+---
+
+## Business Impact
+
+This project demonstrates how pricing intelligence can support:
+
+- Consumer spending optimization
+- Retail competitive benchmarking
+- Category pricing strategy
+- Dynamic pricing analysis
+- Hyperlocal market intelligence
+
+The framework can be extended to hundreds of products and multiple cities to support retailer pricing decisions at scale.
+
+---
 
 ## Project Structure
 
 ```
+## Project Structure
+
 bhubaneswar-price-intelligence/
+│
+├── app.py
+├── analytics.py
+├── generate_brief.py
+├── requirements.txt
+├── README.md
+│
 ├── data/
-│   └── prices.py              ← Seed dataset: 25 items × 4 sources
-├── analytics.py               ← Business logic (separated from UI)
-│   ├── monthly_basket_cost()
-│   ├── savings_analysis()
-│   ├── source_scorecard()
-│   ├── cluster_items()        ← KMeans clustering
-│   └── executive_brief()      ← Auto-generates ranked recommendations
-├── app.py                     ← Streamlit dashboard (6 views)
-├── generate_brief.py          ← Standalone PDF brief generator
-├── bhubaneswar_price_brief.pdf ← Exported executive brief
-└── requirements.txt
+│   └── prices.py
+│
+├── outputs/
+│   └── bhubaneswar_price_brief.pdf
+│
+└── screenshots/
+    ├── dashboard_home.png
+    ├── executive_brief.png
+    ├── basket_view.png
+    ├── category_view.png
+    └── clustering_view.png
+
 ```
+
+---
+
+## Future Enhancements
+
+- Automated daily price scraping
+- Historical price tracking
+- Seasonal trend analysis
+- City-to-city comparisons
+- Demand forecasting
+- Price anomaly detection
+- Retailer recommendation engine
+
+---
+
+## Resume Highlights
+
+- Collected and analyzed grocery prices across 4 retail channels
+- Built price intelligence dashboard using Streamlit and Plotly
+- Quantified ₹14,856 annual household savings opportunity
+- Applied KMeans clustering to segment products by volatility and switching potential
+- Automated executive insight generation through Python analytics pipeline
 
 ---
 
